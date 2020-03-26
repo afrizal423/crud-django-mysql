@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}
+{{judul}}
+{% endblock title %}
+{% block konten %}
+{% block bar %}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+      <img src="assets/img/uts.png">
+    </h5>
+    <button class="btn btn-outline-primary" href="#">{% for data in bio %}{{ data.nama }}{% endfor %}  </button>
+  </div>
+{% endblock bar %}
+    
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <img src="assets/img/user.png" height="400">{% for data in bio %} 
+  <h1 class="display-4">{{ data.nama }}</h1>
+  <p class="lead">{{ data.deskripsi }}</p>
+  {% endfor %}  
+
+</div>
+
+<div class="container">
+  
+
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Biodata</h4>
+      </div>
+      <div class="card-body">
+        {% for data in bio %}  
+        <h3 class="card-title pricing-card-title"><small class="text-muted">Nama :  </small> {{ data.nama }}</h3>
+        <h3 class="card-title pricing-card-title"><small class="text-muted">Umur :  </small> {{ umur }}</h3>
+        <h3 class="card-title pricing-card-title"><small class="text-muted">Alamat:  </small>{{ data.alamat }}</h3>
+        <h3 class="card-title pricing-card-title"><small class="text-muted">Email :  </small>{{ data.email }}</h3>
+        <input type="button" class="btn btn-lg btn-block btn-outline-warning" onclick="location.href='editbio/{{data.npm}}';" value="Edit Biodata" />
+        {% endfor %}  
+      </div>
+    </div>   
+  </div>
+
+   <br><br>
+    <h1>Pendidikan <input type="button" class="btn btn-primary" onclick="location.href='tmbhjenjang';" value="Tambah Data" /> </h1>
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Jenjang Pendidikan</th>
+      <th scope="col">Sekolah/Univ</th>
+      <th scope="col">Thn Lulus</th>
+      <th scope="col">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in didik %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{data.id_jenjang.nama_jenjang}}</td>
+      <td>{{data.nama_sekolah}}</td>
+      <td>{{data.thn_lulus}}</td>
+      <td>
+        <input type="button" class="btn btn-outline-warning" onclick="location.href='/editjenjang/{{data.id_pendidikan}}';" value=" Edit" />
+        <a type="button" class="btn btn-outline-danger" href="/hapusjenjang/{{data.id_pendidikan}}" onclick="return confirm('Anda yakin mau menghapus data ini?');">Delete</a>
+        <!-- <input type="button" class="btn btn-outline-danger" data-confirm="Are you sure to delete this item?" onclick="location.href='/hapusjenjang/{{data.id_pendidikan}}';" value=" Delete" /> -->
+        
+      </td>
+    </tr>
+    {% endfor %}  
+
+  </tbody>
+</table>
+
+
+  
+
+{% endblock konten %}

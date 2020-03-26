@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}  
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ini adalah dasar CRUD menggunakan Django dengan layout dari Dosen saya.">
+    <meta name="author" content="Fawwaz Ali Akbar">
+    <link rel="icon" href="{% static 'img/upn.png' %}" sizes="32x32">
+    <title>
+        {% block title %}
+        {% endblock title %}
+
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/pricing.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="template-uts_files/pricing.css" rel="stylesheet">
+  <script src="template-uts_files/prompt.js"></script></head>
+  <body>
+    {% block konten %}
+    {% block bar %}
+    {% endblock bar %}
+    {% endblock konten %}
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+        <div class="col-12 col-md float-right"> 
+          <a href="/"><img class="mb-2" src="{% static 'img/upn.png' %} " alt="" width="100" height="100"></a>
+          <small class="d-block mb-3 text-muted">© Pemrograman Framework 2020</small>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

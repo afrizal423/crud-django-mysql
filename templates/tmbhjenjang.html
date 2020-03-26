@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}  
+{% block title %}
+{{judul}}
+{% endblock title %}
+{% block konten %} 
+{% block bar %}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+      <img src="{% static 'img/uts.png' %}">
+    </h5>
+    <button class="btn btn-outline-primary" href="#">{{ bio.nama }} </button>
+  </div>
+{% endblock bar %}
+	<form method="POST">
+		{% csrf_token %}  
+		<table style="margin:20px auto;">
+            <tr>
+                <td>Jenjang</td>
+                <td>
+                     <!-- <label for="Jenjang">Jenjang</label> -->
+
+                    <select id="Jenjang" name="id_jenjang">
+                        {% for dt in jenjang %}
+                    <option value="{{dt.id_jenjang}}">{{dt.nama_jenjang}}</option>
+                    {% endfor %}  
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Nama Sekolah</td>
+                <td>
+                <input hidden type="text" name="id_pendidikan" value="">
+                <input type="text" name="nama_sekolah" value=""></td>
+            </tr>
+            <tr>
+                <td>Tahun Lulus</td>
+                <td><input type="number" name="thn_lulus" value=""></td>
+            </tr>
+            
+                <td></td>
+                <td><input type="button" onclick = "window.history.back()" value="kembali"></td>
+                <td><input type="submit" value="Simpan"></td>
+
+            </tr>
+        </table>
+	</form>	
+	{% endblock konten %}
