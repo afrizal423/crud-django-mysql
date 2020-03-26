@@ -5,7 +5,7 @@
 # Crud Django MySql Sederhana
 Dalam projek ini hanya implementasi CRUD pada <i>Framework</i> Django menggunakan MySql sebagai databasenya.
 ### ToDo List Project kedepannya
-- [x] Fundamental CRUD (Templating, Layouting, Static files) [(<i>Download filenya</i>)](https://)
+- [x] Fundamental CRUD (Templating, Layouting, Static files) [(<i>Download filenya</i>)](https://github.com/afrizal423/crud-django-mysql/releases/tag/v1)
 - [ ] Login/Register
 - [ ] Upload File
 - [ ] Export PDF / DOC
