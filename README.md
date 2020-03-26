@@ -1,10 +1,15 @@
 <p align="right">
 بِسْــــــــــــــمِ اللَّهِ الرَّحْمَنِ الرَّحِيم 
 </p>
-File lengkap diupload besok kamis ya
 
 # Crud Django MySql Sederhana
 Dalam projek ini hanya implementasi CRUD pada <i>Framework</i> Django menggunakan MySql sebagai databasenya.
+### ToDo List Project kedepannya
+- [x] Fundamental CRUD
+- [ ] Login/Register
+- [ ] Upload File
+- [ ] Export PDF / DOC
+- [ ] Export CSV / Excel
 
 ## Installation
 
